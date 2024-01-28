@@ -10,3 +10,10 @@ after_success:
   - docker build -t veeraarad/multi-server ./server
   - docker build -t veeraarad/multi-worker ./worker
   - docker build -t veeraarad/multi-nginx ./nginx
+  # docker login
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # docker push
+  - docker push veeraarad/multi-client
+  - docker push veeraarad/multi-server
+  - docker push veeraarad/multi-worker
+  - docker push veeraarad/multi-nginx
