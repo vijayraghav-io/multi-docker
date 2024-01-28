@@ -4,7 +4,7 @@ services:
 before_install:
   - docker build -t veeraarad/react-test -f ./client/Dockerfile ./client
 scripts:
-  - docker run -e CI=true veeraarad/react-test npm run test
+  - docker run -e CI=true veeraarad/react-test npm test
 after_success:
   - docker build -t veeraarad/multi-client ./client
   - docker build -t veeraarad/multi-server ./server
