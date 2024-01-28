@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t veeraarad/react-test -f ./client/Dockerfile ./client
+  - docker build -t veeraarad/react-test -f ./client/Dockerfile.dev ./client
 scripts:
   - docker run -e CI=true veeraarad/react-test npm test
 after_success:
