@@ -17,3 +17,11 @@ after_success:
   - docker push veeraarad/multi-server
   - docker push veeraarad/multi-worker
   - docker push veeraarad/multi-nginx
+deploy:
+  region: "us-west-2"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-891377151972"
+  bucket_path: "docker-multi"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
